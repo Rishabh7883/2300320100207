@@ -1,13 +1,13 @@
-package com.notification_app_be.notification_app_be;
+package com.logging_middleware.logging_middleware;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NotificationAppBeApplication {
+public class LoggingMiddlewareApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(NotificationAppBeApplication.class, args);
+		SpringApplication.run(LoggingMiddlewareApplication.class, args);
 	}
 
 }

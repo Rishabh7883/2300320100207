@@ -1,10 +1,10 @@
-package com.notification_app_be.notification_app_be;
+package com.logging_middleware.logging_middleware;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class NotificationAppBeApplicationTests {
+class LoggingMiddlewareApplicationTests {
 
 	@Test
 	void contextLoads() {
