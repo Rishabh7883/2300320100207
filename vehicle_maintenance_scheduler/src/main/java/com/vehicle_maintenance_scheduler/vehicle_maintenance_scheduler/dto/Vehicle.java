@@ -1,11 +1,45 @@
 package com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto;
 
-import lombok.Data;
-
-@Data
 public class Vehicle {
 
-    private String taskID;
+    private String taskId;
     private int duration;
     private int impact;
+
+    public Vehicle() {
+    }
+
+    public Vehicle(
+            String taskId,
+            int duration,
+            int impact) {
+
+        this.taskId = taskId;
+        this.duration = duration;
+        this.impact = impact;
+    }
+
+    public String getTaskId() {
+        return taskId;
+    }
+
+    public void setTaskId(String taskId) {
+        this.taskId = taskId;
+    }
+
+    public int getDuration() {
+        return duration;
+    }
+
+    public void setDuration(int duration) {
+        this.duration = duration;
+    }
+
+    public int getImpact() {
+        return impact;
+    }
+
+    public void setImpact(int impact) {
+        this.impact = impact;
+    }
 }
