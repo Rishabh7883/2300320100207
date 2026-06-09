@@ -1,12 +1,12 @@
 package com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.service;
 
-import org.springframework.stereotype.Service;
-
-import com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto.Vehicle;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
+import org.springframework.stereotype.Service;
+
+import com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto.Vehicle;
 
 @Service
 public class VehicleService {

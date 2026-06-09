@@ -1,11 +1,11 @@
 package com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto.Depot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class DepotService {

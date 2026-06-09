@@ -1,19 +1,30 @@
 package com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto.OptimizationResult;
 import com.vehicle_maintenance_scheduler.vehicle_maintenance_scheduler.dto.Vehicle;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Service
 public class SchedulerService {
+
+    private final LogService logService;
+
+    public SchedulerService(LogService logService) {
+        this.logService = logService;
+    }
 
     public OptimizationResult optimize(
             List<Vehicle> vehicles,
             int capacity) {
+
+        logService.info(
+                "Knapsack optimization started. Capacity = "
+                        + capacity
+        );
 
         int n = vehicles.size();
 
@@ -30,7 +41,7 @@ public class SchedulerService {
                     dp[i][j] = Math.max(
                             dp[i - 1][j],
                             v.getImpact() +
-                            dp[i - 1][j - v.getDuration()]
+                                    dp[i - 1][j - v.getDuration()]
                     );
                 } else {
                     dp[i][j] = dp[i - 1][j];
@@ -56,6 +67,11 @@ public class SchedulerService {
                 j -= v.getDuration();
             }
         }
+
+        logService.info(
+                "Optimization completed. Total Impact = "
+                        + dp[n][capacity]
+        );
 
         return new OptimizationResult(
                 selectedTasks,
